@@ -1,0 +1,11 @@
+[
+  {
+    "filename": "html-preview.html",
+    "slug": "html-preview",
+    "title": "HTML Preview",
+    "description": "This tool previews HTML in a sandboxed iframe while keeping the source editable. It is useful for quickly checking AI-generated snippets, layout experiments, and small static fragments before you turn them into standalone tools.",
+    "created": null,
+    "updated": null,
+    "url": "https://htmltools.maxlinke.eu/html-preview"
+  }
+]

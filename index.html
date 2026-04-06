@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tools</title>
+  <meta name="description" content="Static HTML and JavaScript tools built with AI.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4efe7;
+      --panel: #fffaf2;
+      --ink: #1f2328;
+      --muted: #5c6670;
+      --accent: #8a3b12;
+      --accent-soft: #ead8c8;
+      --border: #d9c7b5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #fff7dc 0, transparent 28rem),
+        linear-gradient(180deg, #f9f4ea 0%, var(--bg) 100%);
+    }
+    .shell {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(138, 59, 18, 0.12), rgba(255, 250, 242, 0.88));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 22px;
+      box-shadow: 0 12px 30px rgba(99, 67, 41, 0.08);
+    }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 42rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .content {
+      margin-top: 24px;
+      background: rgba(255, 250, 242, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 22px;
+      box-shadow: 0 10px 25px rgba(99, 67, 41, 0.06);
+    }
+    h2, h3 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin-top: 1.6em;
+    }
+    a {
+      color: var(--accent);
+    }
+    code {
+      background: var(--accent-soft);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+    }
+    .recent-block {
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      margin: 12px 0 24px;
+    }
+    .recent-block h2 {
+      margin-top: 0;
+    }
+    .recent-date {
+      color: var(--muted);
+      margin-left: 0.35rem;
+      font-size: 0.95rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    @media (max-width: 640px) {
+      .shell {
+        padding: 18px 12px 40px;
+      }
+      .hero, .content {
+        padding: 18px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <h1>HTML Tools</h1>
+      <p>Static HTML and JavaScript tools built with AI.</p>
+    </section>
+    <section class="content">
+      <h1>HTML Tools</h1>
+<p>Static HTML and JavaScript tools built with AI.</p>
+<p>This repository is a lightweight, static collection of browser-based tools inspired by <code>simonw-tools</code>, but focused on HTML utilities and AI-assisted development.</p>
+<p>Each tool lives as a root-level <code>*.html</code> file with an accompanying <code>*.docs.md</code> file. Build scripts generate the homepage and JSON metadata used across the site.</p>
+<!-- recently starts -->
+<div class="recent-block">
+  <h2>Recently added</h2>
+  <ul>
+    <li><a href="https://htmltools.maxlinke.eu/html-preview">HTML Preview</a></li>
+  </ul>
+</div>
+<!-- recently stops -->
+<h2>HTML and text tools</h2>
+<ul><li><a href="/html-preview">HTML preview</a> type HTML and inspect the rendered result next to the source</li></ul>
+    </section>
+  </main>
+</body>
+</html>

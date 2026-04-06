@@ -1,0 +1,1 @@
+This tool previews HTML in a sandboxed iframe while keeping the source editable. It is useful for quickly checking AI-generated snippets, layout experiments, and small static fragments before you turn them into standalone tools.

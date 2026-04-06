@@ -1,0 +1,12 @@
+{
+  "name": "htmltools",
+  "version": "0.1.0",
+  "description": "Static HTML and JavaScript tools built with AI.",
+  "private": true,
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}

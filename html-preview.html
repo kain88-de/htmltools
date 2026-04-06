@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Preview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f8f6;
+      --panel: #ffffff;
+      --ink: #172126;
+      --muted: #5d6d73;
+      --accent: #0a7a5a;
+      --border: #c7d9d2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(10, 122, 90, 0.08), transparent 22rem),
+        linear-gradient(180deg, #fbfffd, var(--bg));
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 16px 48px;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+    }
+    .lede {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      max-width: 52rem;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+    .panel {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(23, 33, 38, 0.06);
+    }
+    .panel-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(10, 122, 90, 0.08), rgba(255, 255, 255, 0));
+      font-weight: 600;
+    }
+    textarea {
+      width: 100%;
+      min-height: 420px;
+      padding: 16px;
+      border: 0;
+      resize: vertical;
+      font: 14px/1.5 "SFMono-Regular", Consolas, monospace;
+      background: transparent;
+      color: var(--ink);
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      min-height: 420px;
+      border: 0;
+      background: white;
+    }
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 0 0 16px;
+    }
+    button {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.7rem 1rem;
+      font: inherit;
+      cursor: pointer;
+    }
+    button.primary {
+      border-color: transparent;
+      background: var(--accent);
+      color: white;
+    }
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>HTML Preview</h1>
+    <p class="lede">Paste or generate HTML on the left and inspect the rendered output on the right. The preview runs in a sandboxed iframe so you can safely test snippets.</p>
+    <div class="toolbar">
+      <button class="primary" id="render">Render preview</button>
+      <button id="reset">Reset example</button>
+      <button id="copy">Copy HTML</button>
+    </div>
+    <section class="grid">
+      <div class="panel">
+        <div class="panel-header">Source</div>
+        <textarea id="source" spellcheck="false"></textarea>
+      </div>
+      <div class="panel">
+        <div class="panel-header">Preview</div>
+        <iframe id="preview" sandbox="allow-same-origin"></iframe>
+      </div>
+    </section>
+  </main>
+  <script>
+    const starter = `<section style="font-family: Georgia, serif; padding: 24px;">
+  <h2 style="margin-top: 0;">AI-Built HTML Snippet</h2>
+  <p>Use this space for experiments, mockups, and one-file tools.</p>
+  <button style="background: #0a7a5a; color: white; border: 0; border-radius: 999px; padding: 10px 14px;">
+    Example button
+  </button>
+</section>`;
+
+    const source = document.getElementById("source");
+    const preview = document.getElementById("preview");
+
+    function renderPreview() {
+      preview.srcdoc = source.value;
+    }
+
+    document.getElementById("render").addEventListener("click", renderPreview);
+    document.getElementById("reset").addEventListener("click", () => {
+      source.value = starter;
+      renderPreview();
+    });
+    document.getElementById("copy").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(source.value);
+    });
+    source.addEventListener("input", renderPreview);
+
+    source.value = starter;
+    renderPreview();
+  </script>
+  <script type="module" src="footer.js"></script>
+</body>
+</html>
